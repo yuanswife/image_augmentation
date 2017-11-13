@@ -13,9 +13,8 @@ lung-nodule-detection : cube image augmentation.
 1、加载cube image(load_cube_image());
 2、将cube image还原成一张张image，对每张image做相同的增广操作，然后再存储为新的cube image(save_aug_cube_image())。
 
-运行：
-
-左右翻转：python2 imgaug.py fliph
+###运行
+左右翻转：python2 imgaug.py fliph <br>
 上下翻转：python2 imgaug.py flipv
 旋转：python2 imgaug.py rot_90 rot_180 rot_-90
 不规则缩放：python2 imgaug.py zoom_0_50_300_150（zoom_150_0_300_150 zoom_200_0_300_300）
