@@ -94,12 +94,18 @@ def process(dir, file, op_lists, dst_dir):
 
 
 if __name__ == '__main__':
-    image_dir = WORKING_DIR + "test_aug_image/"
-    dst_dir = WORKING_DIR + "test_aug_image_result/"
+    # image_dir = WORKING_DIR + "test_aug_image/"
+    # dst_dir = WORKING_DIR + "test_aug_image_result/"
+    image_dir = sys.argv[1]
+    if not os.path.isdir(image_dir):
+        print('Invalid image directory: {}'.format(image_dir))
+        sys.exit(2)
+    
+    dst_dir = sys.argv[2]
     if not os.path.exists(dst_dir):
         os.makedirs(dst_dir)
 
-    op_codes = sys.argv[1:]
+    op_codes = sys.argv[3:]
     op_lists = []
     for op_code_list in op_codes:
         op_list = []
