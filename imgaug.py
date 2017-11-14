@@ -2,7 +2,13 @@
 # -*-coding:utf-8-*-
 import sys, os, re, traceback
 from os.path import isfile
-from multiprocessing.dummy import Pool, cpu_count
+
+# python2:
+# from multiprocessing.dummy import Pool, cpu_count
+# python3:
+from multiprocessing.dummy import Pool
+from multiprocessing import cpu_count
+
 from counter import Counter
 from ops.rotate import Rotate
 from ops.fliph import FlipH
