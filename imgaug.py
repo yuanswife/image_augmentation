@@ -94,6 +94,9 @@ def process(dir, file, op_lists, dst_dir):
 
 
 if __name__ == '__main__':
+    if len(sys.argv) < 3:
+        print('Usage: {} <image directory> <dst directory> <operation> (<operation> ...)'.format(sys.argv[0]))
+        sys.exit(1)
     # image_dir = WORKING_DIR + "test_aug_image/"
     # dst_dir = WORKING_DIR + "test_aug_image_result/"
     image_dir = sys.argv[1]
