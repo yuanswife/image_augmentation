@@ -21,3 +21,4 @@ lung-nodule-detection : cube image augmentation.
 translate：python2 imgaug.py trans_20_20 （trans_0_100）<br>
 模糊(可对整张cube image直接操作)：(python2 imgaug.py blur_1.0 blur_2.0 blur_4.0) <br>
 噪音(可对整张cube image直接操作)：(python2 imgaug.py noise_0.01 noise_0.02 noise_0.05）<br>
+注：未加括号的表示在cube image还原后的一张张image上效果不好的。
