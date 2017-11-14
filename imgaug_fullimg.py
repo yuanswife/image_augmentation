@@ -1,6 +1,7 @@
 import sys, os, re, traceback
 from os.path import isfile
-from multiprocessing.dummy import Pool, cpu_count
+from multiprocessing.dummy import Pool
+from multiprocessing import cpu_count
 from counter import Counter
 from ops.rotate import Rotate
 from ops.fliph import FlipH
@@ -17,9 +18,7 @@ OPERATIONS = [Rotate, FlipH, FlipV, Translate, Noise, Zoom, Blur]
 
 '''
 Augmented files will have names matching the regex below, eg
-
     original__rot90__crop1__flipv.jpg
-
 '''
 AUGMENTED_FILE_REGEX = re.compile('^.*(__.+)+\\.[^\\.]+$')
 EXTENSION_REGEX = re.compile('|'.join(map(lambda n : '.*\\.' + n + '$', EXTENSIONS)))
@@ -59,7 +58,7 @@ def process(dir, file, op_lists, dst_dir):
 
 if __name__ == '__main__':
     if len(sys.argv) < 3:
-        print('Usage: {} <image directory> <operation> (<operation> ...)'.format(sys.argv[0]))
+        print('Usage: {} <image directory> <dir image directory> <operation> (<operation> ...)'.format(sys.argv[0]))
         sys.exit(1)
 
     image_dir = sys.argv[1]
