@@ -18,9 +18,8 @@ lung-nodule-detection : cube image augmentation.
 左右翻转：python imgaug.py <img_dir> <dst_img_dir> fliph <br>
 上下翻转：python imgaug.py <img_dir> <dst_img_dir> flipv <br>
 旋转：python imgaug.py <img_dir> <dst_img_dir> rot_50 rot_90 rot_180 rot_-90 <br>
-不规则缩放：python imgaug.py <img_dir> <dst_img_dir> zoom_0_50_300_150（zoom_150_0_300_150 zoom_200_0_300_300）<br>
-translate：python imgaug.py <img_dir> <dst_img_dir> trans_20_20 （trans_0_100）<br>
-注：未加括号的表示在cube image还原后的一张张image上效果不好的。
+平移translate：python imgaug.py <img_dir> <dst_img_dir> trans_5_5 trans_10_10<br>
+【不规则缩放：python imgaug.py <img_dir> <dst_img_dir> zoom_0_50_300_150】<br> 
 
 对full cube image(平铺的cube image)进行操作：<br>
 模糊：python imgaug_fullimg.py <img_dir> <dst_img_dir> blur_1.0 blur_1.5 <br>
